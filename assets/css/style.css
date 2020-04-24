@@ -3,6 +3,7 @@
 *{
     padding: 0px;
     margin: 0px;
+    /* color: green; */
 }
 
 body{
@@ -19,6 +20,13 @@ a :visited{
 
 a:hover{
     color: #555555;
+}
+
+.alert_green{
+    color:green;
+}
+.alert_red{
+    color:red;
 }
 
 /* CONTAINER*/

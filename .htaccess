@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+# Activar rewrite
+
+RewriteEngine on
+ErrorDocument 404 http://localhost/Project-TIENDAONLINE/error/
+
+RewriteCond %{SCRIPT_FILENAME} !-d 
+#no voy a poder cargar cualquier directorio
+RewriteCond %{SCRIPT_FILENAME} !-f 
+#no voy a poder cargar cualquier fichero
+
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2 
+#este va hacer el formato de la url
+</IfModule>
