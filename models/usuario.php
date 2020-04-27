@@ -35,7 +35,7 @@ class Usuario{
         return $this->email;
     }
     function getPassword(){
-        return $this->password; 
+        return password_hash($this->db->real_escape_string($this->password),PASSWORD_BCRYPT,['cost' =>4]); 
         //encriptamos la contraseña del usuario
     }
     function getRol(){
@@ -61,7 +61,7 @@ class Usuario{
         $this ->email = $this->db->real_escape_string($email);
     }
     function setPassword($password){
-        $this ->password = password_hash($this->db->real_escape_string($password),PASSWORD_BCRYPT,['cost' =>4]);
+        $this ->password = $password;
     }
     function setRol($rol){
         $this ->rol = $rol;
@@ -81,6 +81,26 @@ class Usuario{
         return $result;
     }
 
+    public function login(){
+        $result = false; 
+        /* NO CON LOS GET DE EMAIL Y PASSWORD PORQUE NOS GENERARIA ERROR
+            AL MOMENTO DE PASAR AL VERIFY LA PASSWORD HARIA DOBLE CIFRADO Y NO LLEGARIA LIMPIA
+        */
+        $email = $this->email;
+        $password = $this->password;
+        //comprobamos si existe el usuario
+        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+        $login = $this ->db->query($sql);
+        if($login && $login -> num_rows==1) // con num_rows Obtiene el número de filas de un resultado
+        {
+            $usuario = $login->fetch_object(); // Devuelve la fila actual de un conjunto de resultados como un objeto
+            //verificamos la cobtrraseña
+            $verify = password_verify($password, $usuario->password);
+            if($verify){
+                $result = $usuario;
+            }
+        } return $result;
+    }
 }
 
 ?>
