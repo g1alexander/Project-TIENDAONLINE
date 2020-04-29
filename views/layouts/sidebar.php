@@ -10,6 +10,7 @@
             <input type="password" name="password" />
             <input type="submit" value="Enviar">
         </form>
+        
     <?php else: ?>
     <!-- 'nombre' Y 'apellido' SON LOS NOMBRES QUE ESTAN EN LA TABLA DE LA BASE DE DATOS 
     
@@ -23,7 +24,7 @@
             <!-- LAS CONDICIONES SON PARA IDENTICAR QUE ROL TIENE EL USUARIO QUE INGRESO-->
 
             <?php if(isset($_SESSION['admin'])): ?>
-                <li><a href="#">Gestionar categorias</a></li>
+                <li><a href="<?=base_url?>categoria/index">Gestionar categorias</a></li>
                 <li><a href="#">Gestionar productos</a></li>
                 <li><a href="#">Gestionar pedidos</a></li>
             <?php endif; ?>
@@ -32,6 +33,8 @@
             <?php if(isset( $_SESSION['identity'])): ?>
                 <li><a href="#">Mis pedidos</a></li>
                 <li><a href="<?=base_url?>usuario/logout">Cerrar Sesión</a></li>
+            <?php else: ?>
+                <li><a href="<?=base_url?>usuario/registro">Registrarse</a></li>
             <?php endif; ?>
         </ul>
     </div>
