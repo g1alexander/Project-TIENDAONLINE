@@ -18,32 +18,30 @@
                     SI NO COLOCAMOS LA URL EL SISTEMA DE ARCHIVOS INTERPRETA QUE SON DIRECTORIOS EN LUGAR DE 
                     UNA URL 
                 -->
-                <a href="index.php">
+                <a href="<?=base_url?>">
                     FASHION STORE
                 </a>
             </div>
         </header>
         <!-- MENU -->
+        <?php $categorias = Utils::showCategorias(); ?>
+        <!-- EMPEZAMOS LLAMANDO AL METODO ESTATICO showCategorias() QUE ESTA EN helpers/utils.php
+        EL CUAL NOS PERMITIRA MOSTRAR LAS CATEGORIAS QUE TENEMOS EN LA BASE DE DATOS PARA MOSTARLO
+        EN EL MENU DEL SITIO
+        -->
+
         <nav id="menu">
             <ul>
                 <li>
                     <a href="#">Inicio</a>
                 </li>
+                <?php while($cat = $categorias->fetch_object()): ?>
+                <!-- LISTAMOS TODOS LOS OBJETOS QUE ESTAN EN LA BASE DE DATOS Y LOS ALMACENAMOS
+                    EN LA $cat PARA LUEGO MOSTARLOS-->
                 <li>
-                    <a href="#">Categoria 1</a>
+                    <a href="#"><?= $cat ->nombre ?></a>
                 </li>
-                <li>
-                    <a href="#">Categoria 2</a>
-                </li>
-                <li>
-                    <a href="#">Categoria 3</a>
-                </li>
-                <li>
-                    <a href="#">Categoria 4</a>
-                </li>
-                <li>
-                    <a href="#">Categoria 5</a>
-                </li>
+                <?php endwhile; ?>
             </ul>
         </nav>
 

@@ -12,6 +12,9 @@ public static function deleteSession($name){
     return $name;
 }
 
+/* FUNCION QUE NOS PERMITIRA SABER SI EL USUARIO ES UN ADMINISTRADOR O NO
+    LA LLAMAREMOS EN DIFERENTES METODOS DE LOS CONTROLADORES
+*/
 public static function isAdmin(){
     if(!isset($_SESSION['admin'])){
         header('Location:'.base_url);
@@ -19,5 +22,15 @@ public static function isAdmin(){
         return true;
     }
 }
+/* FUNCION QUE NOS PERMITIRA LISTAR LAS CATEGORIAS EN EL MENU DEL SITIO WEB 
+    views/layouts/header.php
+*/
+public static function showCategorias(){
+    require_once 'models/categoria.php';
+    $categoria = new Categoria();
+    $categorias=$categoria->getCategorias();
+    return $categorias;
+}
+
 }
 ?>
