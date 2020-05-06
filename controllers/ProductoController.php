@@ -3,8 +3,29 @@ require_once 'models/producto.php';
 class productoController{
    // session_start();
     public function index(){
-       //renderizando contenido
+        /* ES LA PAGINA PRINCIPAL DEL SITIO Y MOSTRARA 6 PRODUCTOS 
+            ALEATORIAMENTE 
+            models/producto.php
+        */
+        $producto = new Producto();
+        $productos = $producto -> getRandom(6);
+        //RENDERIZAR LA VISTA
        require_once 'views/producto/destacados.php';
+    }
+
+    public function ver(){
+        /* ES LA PAGINA PRINCIPAL DEL SITIO Y MOSTRARA UN PRODUCTO EN ESPECIFICO
+           YA SE SELECCIONADO EN LA PAGINA PRINCIPAL O CATEGORIAS 
+            ALEATORIAMENTE 
+            models/producto.php
+        */
+        if(isset($_GET['id'])){
+            $id= $_GET['id'];
+            $producto = new Producto();
+            $producto->setId($id);
+            $pro = $producto->getOne();
+        }
+        require_once 'views/producto/ver.php';
     }
 
     public function gestion(){

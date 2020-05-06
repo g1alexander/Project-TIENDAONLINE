@@ -33,13 +33,17 @@
         <nav id="menu">
             <ul>
                 <li>
-                    <a href="#">Inicio</a>
+                    <a href="<?=base_url?>">Inicio</a>
+                    <!-- CONSTANTE URL PRINCIPAL DEL SITIO WEB 
+                       config/parametros.php
+                    -->
                 </li>
                 <?php while($cat = $categorias->fetch_object()): ?>
                 <!-- LISTAMOS TODOS LOS OBJETOS QUE ESTAN EN LA BASE DE DATOS Y LOS ALMACENAMOS
                     EN LA $cat PARA LUEGO MOSTARLOS-->
                 <li>
-                    <a href="#"><?= $cat ->nombre ?></a>
+                    <a href="<?=base_url?>categoria/ver&id=<?=$cat->id?>"><?= $cat ->nombre ?></a>
+                    <!-- controller/categoriaController.php (URL) -->
                 </li>
                 <?php endwhile; ?>
             </ul>

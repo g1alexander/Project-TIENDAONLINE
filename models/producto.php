@@ -98,6 +98,26 @@ class Producto{
         return $productos;
     }
 
+    public function getAllCategoria(){
+        /* METODO QUE NOS PERMITE EL PRODUCTO ESPECIFICO DE UNA CATEGORIA 
+         controllers/categoriaController.php
+        */
+        $sql = "SELECT p.*, c.nombre AS 'catnombre' FROM productos p "
+        . "INNER JOIN categorias c ON c.id = p.categoria_id "
+        . "WHERE p.categoria_id = {$this->getCategoria_id()} "
+        . "ORDER BY id DESC";
+        $productos = $this->db->query($sql);
+       return $productos;
+   }
+
+    public function getRandom($limit){
+        /* HAREMOS APARECER PRODUCTOS ALETORIOS ATRAVES DE ESTE METODO CON UN LIMITE Y LO USAMOS
+        controllers/productoController.php
+        */
+        $producto = $this->db->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit");
+        return $producto;
+    }
+
     public function getOne(){
          /* ESTE METODO LOS PERMITIRA VER QUE PRODUCTO VAMOS A MODIFICAR Y LO MOSTRAREMOS EN EL 
         FORMULARIO DE views/producto/crear.php EN LA PARTE DE EDICION DE PRODUCTO 

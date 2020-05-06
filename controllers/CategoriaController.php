@@ -1,5 +1,6 @@
 <?php 
 require_once 'models/categoria.php';
+require_once 'models/producto.php';
 class categoriaController{
     /*  METODO QUE LISTARA Y ASI PODRA MOSTRAR AL ADMINISTRADOR LAS CATEGORIAS QUE SE TIENEN */
     public function index(){
@@ -10,16 +11,37 @@ class categoriaController{
         require_once 'views/categoria/index.php';
     }
 
-    /*  METODO QUE NOS MOSTRARA AL ADMINISTRADOR EL FORMULARIO DE CREAR UNA NUEVA CATEGORIA */
     public function crear(){
+           /*  METODO QUE NOS MOSTRARA AL ADMINISTRADOR EL FORMULARIO DE CREAR UNA NUEVA CATEGORIA */
         Utils::isAdmin();
         require_once 'views/categoria/crear.php';
     }
 
-    /* METODO QUE RECIBE LOS DATOS DEL FORMULARIO views/categoria/crear.php 
+    public function ver(){
+        /* METODO QUE NOS PERMITE PODER VISUALIZAR LOS PRODUCTOS DE UNA
+            CATEGORIA EN ESPECIFICO Y LO HACEMOS ATRAVES DE LOS 
+            models/producto.php
+            models/categoria.php
+        */
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            //conseguir categoria
+            $categoria  = new Categoria();
+            $categoria->setId($id);
+            $categoria = $categoria->getOne();
+            //coneguir producto
+            $producto = new Producto();
+            $producto->setCategoria_id($id);
+            $productos = $producto->getAllCategoria();
+        }
+        require_once 'views/categoria/ver.php';
+    }
+
+
+    public function save(){
+         /* METODO QUE RECIBE LOS DATOS DEL FORMULARIO views/categoria/crear.php 
        Y EL QUE EJECUTA EL METODO DEL models/categoria.php PARA GUARDAR UNA NUEVA CATEGORIA
     */
-    public function save(){
         Utils::isAdmin();
         if(isset($_POST) && isset($_POST['nombre'])){
              /* GUARDAREMOS CATEGORIAS */

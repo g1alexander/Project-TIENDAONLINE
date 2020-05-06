@@ -42,6 +42,8 @@ class Categoria{
     public function getOne(){
             /* ESTE METODO LOS PERMITIRA VER QUE CATEGORIA VAMOS A MODIFICAR Y LO MOSTRAREMOS EN EL 
         FORMULARIO DE views/categoria/crear.php EN LA PARTE DE EDICION DE CATEGORIA 
+
+        Y TAMBIEN PODER VER EL O LOS PRODUCTOS QUE TENGA ESA CATEGORIA EN EL views/layouts/header.php
     */
         $categorias = $this ->db->query("SELECT * FROM categorias WHERE id={$this->getId()}");
         return $categorias->fetch_object(); //devuelvo un objeto ya utilizable
