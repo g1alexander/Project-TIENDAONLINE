@@ -13,6 +13,6 @@ controllers/productoController.php
     <h2><?=$product->nombre?></h2>
 </a>
     <p><?= $product->precio ?></p>
-    <a href="#" class="button">Comprar</a>
+    <a href="<?=base_url?>carrito/add&id=<?=$product->id?>" class="button">Comprar</a>
 </div>
 <?php endwhile; ?>

@@ -32,7 +32,7 @@ a:hover{
 table{
     text-align: center;
     width: 100%;
-    border: 1px solid #555;
+    border-bottom: 1px solid #ccc;
 }
 td{
     border-top: 1px solid #ccc;
@@ -297,6 +297,12 @@ text-decoration: none;
     margin-bottom: 10px;
 }
 
+.img_carrito{
+    height: 80px;
+    display: block;
+    margin: 10px auto;
+}
+
 .product h2{
     font-size: 18px;
     margin-bottom: 10px;
@@ -307,6 +313,38 @@ text-decoration: none;
     margin-bottom: 10px;
 }
 
+#detalle-producto {
+    width: 100%;
+}
+#detalle-producto .imagen {
+    display: block;
+    width: 47%;
+    float: left;
+    
+    
+}
+#detalle-producto img {
+    display: block;
+    width: 100%;
+    float: left;
+    
+}
+#detalle-producto .data {
+    width: 50%;
+    float: right;
+}
+#detalle-producto .descripcion {
+    margin-bottom: 30px;
+}
+#detalle-producto .precio{
+    margin-top: 10px;
+    font-size: 20px;
+    color: #444;
+}
+#detalle-producto .button{
+    width: 200px;
+    text-align: center;
+}
 /*PIE DE PAGINA*/
 
 #footer{
@@ -317,4 +355,20 @@ text-decoration: none;
     color: white;
     background: #222222;
     border-top: 4px solid #01B1EA;
+}
+
+/*CARRITO*/
+.total-carrito{
+    width: 295px;
+    float: right;
+}
+.total-carrito h3{
+    display: block;
+    float: left;
+    margin-top: 5px;
+}
+.button-pedido{
+    display: block;
+    float: right;
+    width: 100px;
 }
