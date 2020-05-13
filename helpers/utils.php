@@ -22,6 +22,18 @@ public static function isAdmin(){
         return true;
     }
 }
+
+/* FUNCION QUE NOS PERMITIRA SABER SI EL USUARIO ESTA IDENTIFICADO O NO,
+    LA LLAMAREMOS EN DIFERENTES METODOS DE LOS CONTROLADORES
+*/
+public static function isIdentity(){
+    if(!isset($_SESSION['identity'])){
+        header('Location:'.base_url);
+    }else{
+        return true;
+    }
+}
+
 /* FUNCION QUE NOS PERMITIRA LISTAR LAS CATEGORIAS EN EL MENU DEL SITIO WEB 
     views/layouts/header.php
 */
@@ -32,6 +44,11 @@ public static function showCategorias(){
     return $categorias;
 }
 
+/* ESTE METODO NOS PERMITIRA MOSTRAR LA SESSION CUANDO DEMOS COMPRAR UN PRODUCTO
+Y ASI MISMO NOS DARA EL MONTO TOTAL A PAGAR
+
+LO MOSTARMOS EN: views/carrito/index.php  ||  views/layouts/sidebar.php
+*/
 public static function statsCarrito(){
     $stats = array(
         'count' => 0,
