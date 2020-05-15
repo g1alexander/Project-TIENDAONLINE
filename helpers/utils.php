@@ -1,10 +1,11 @@
 <?php 
 
 class Utils{
+
+public static function deleteSession($name){
     /* ESTA FUNCION PERMITIRA ELIMINAR LA SECCION, YA QUE SIN ELLA, ESTA SEGUIRA
         APARECIENDO EN EL FORMULARIO DE REGISTRO DE USURARIO "layouts/usuario/registro.php"
     */
-public static function deleteSession($name){
     if(isset($_SESSION[$name])){
         $_SESSION[$name] = null;
         unset($_SESSION[$name]);
@@ -12,10 +13,10 @@ public static function deleteSession($name){
     return $name;
 }
 
-/* FUNCION QUE NOS PERMITIRA SABER SI EL USUARIO ES UN ADMINISTRADOR O NO
+public static function isAdmin(){
+    /* FUNCION QUE NOS PERMITIRA SABER SI EL USUARIO ES UN ADMINISTRADOR O NO
     LA LLAMAREMOS EN DIFERENTES METODOS DE LOS CONTROLADORES
 */
-public static function isAdmin(){
     if(!isset($_SESSION['admin'])){
         header('Location:'.base_url);
     }else{
@@ -23,10 +24,10 @@ public static function isAdmin(){
     }
 }
 
-/* FUNCION QUE NOS PERMITIRA SABER SI EL USUARIO ESTA IDENTIFICADO O NO,
+public static function isIdentity(){
+    /* FUNCION QUE NOS PERMITIRA SABER SI EL USUARIO ESTA IDENTIFICADO O NO,
     LA LLAMAREMOS EN DIFERENTES METODOS DE LOS CONTROLADORES
 */
-public static function isIdentity(){
     if(!isset($_SESSION['identity'])){
         header('Location:'.base_url);
     }else{
@@ -34,22 +35,22 @@ public static function isIdentity(){
     }
 }
 
-/* FUNCION QUE NOS PERMITIRA LISTAR LAS CATEGORIAS EN EL MENU DEL SITIO WEB 
+public static function showCategorias(){
+    /* FUNCION QUE NOS PERMITIRA LISTAR LAS CATEGORIAS EN EL MENU DEL SITIO WEB 
     views/layouts/header.php
 */
-public static function showCategorias(){
     require_once 'models/categoria.php';
     $categoria = new Categoria();
     $categorias=$categoria->getCategorias();
     return $categorias;
 }
 
-/* ESTE METODO NOS PERMITIRA MOSTRAR LA SESSION CUANDO DEMOS COMPRAR UN PRODUCTO
+public static function statsCarrito(){
+    /* ESTE METODO NOS PERMITIRA MOSTRAR LA SESSION CUANDO DEMOS COMPRAR UN PRODUCTO
 Y ASI MISMO NOS DARA EL MONTO TOTAL A PAGAR
 
 LO MOSTARMOS EN: views/carrito/index.php  ||  views/layouts/sidebar.php
 */
-public static function statsCarrito(){
     $stats = array(
         'count' => 0,
         'total' => 0,
@@ -62,6 +63,23 @@ public static function statsCarrito(){
         }
     }
     return $stats;
+}
+
+public static function showStatus($stats){
+    /* ESTE METODO NOS PERMITIRA MOSTRAR EL ESTADO QUE TIENE EL PEDIDO 
+LO MOSTARMOS EN: views/pedido/detalle.php
+*/
+    $value = 'Pendiente';
+    if($stats == 'confirmado'){
+        $value = 'Pendiente';
+    }elseif($stats == 'preparacion'){
+        $value = 'En Preparacion';
+    }elseif($stats == 'listo_envio'){
+        $value = 'Preparado para enviar'; 
+    }elseif($stats == 'enviado'){
+        $value = 'Enviado';
+    }
+    return $value;
 }
 
 }

@@ -14,7 +14,7 @@ DESDE EL EL CONTROLADOR NOS MOSTRARA ESTE FORMULARIO
 <h3>Datos del pedido:</h3>
 
     Numero de pedido: <?= $pedido->id?> <br>
-    Total a pagar: <?= $pedido->coste?> <br>
+    Total a pagar: <?= $pedido->coste?> cop<br>
     Productos: 
     <!--MOSTRAREMOS LOS PRODUCTOS-->
     <table>
@@ -38,7 +38,7 @@ DESDE EL EL CONTROLADOR NOS MOSTRARA ESTE FORMULARIO
             
             </td>
             <td>
-            <?=$producto->precio?>
+            <?=$producto->precio?> cop
             </td>
             <td>
             <?=$producto->unidades?>

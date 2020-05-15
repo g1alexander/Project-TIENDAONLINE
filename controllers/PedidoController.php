@@ -73,8 +73,12 @@ class pedidoController{
     }
 
     public function detalle(){
+        /* ESTE METODO NOS PERMITIRA SACAR EL DETALLE DE PRODUCTO */
         Utils::isIdentity();
         if(isset($_GET['id'])){
+            /* COMPROBAMOS QUE NOS LLEGUE LA id DEL PRODUCTO
+                views/pedido/gestion.php
+            */
             $id = $_GET['id'];
 
             //sacamos el pedido
@@ -92,6 +96,41 @@ class pedidoController{
             header('Location'.base_url.'pedido/mis_pedidos');
         }
     }
+
+    public function gestion(){
+        /* ESTE METODO LE PERMITIRA AL ADMINISTRADOR PODER VER LA INFORMACION
+            DEL PEDIDO QUE ACABA DE REALIZAR EL USUARIO
+            
+            ESTE METODO ES TANTO COMO PARA gestion COMO PARA mis pedidos
+        */
+        Utils::isAdmin();
+        $gestion = true;
+        $pedido = new Pedido();
+        $pedidos = $pedido->getAll();
+        require_once 'views/pedido/mis_pedidos.php';
+    }
+
+	public function estado(){
+        /* ESTE METODO LE PERMITIRA AL admin PODER CAMBIAR EL ESTADO DEL PRODUCTO
+            HAY 4 OPCIONES EN UN SELECT
+        */
+		Utils::isAdmin();
+		if(isset($_POST['pedido_id']) && isset($_POST['estado'])){//COMPROBAMOS QUE NOS LLEGUE EL id y estado
+			// Recoger datos form
+			$id = $_POST['pedido_id'];
+			$estado = $_POST['estado'];
+			
+			// Upadate del pedido
+			$pedido = new Pedido();
+			$pedido->setId($id);//setear es, indicarle con que objeto de la base de datos vamos a trabajar
+			$pedido->setEstado($estado);
+			$pedido->edit();
+			
+			header("Location:".base_url.'pedido/detalle&id='.$id);
+		}else{
+			header("Location:".base_url);
+		}
+	}
 }
 
 ?>

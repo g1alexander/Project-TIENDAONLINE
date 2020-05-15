@@ -37,7 +37,7 @@
                 <?=$pro->nombre; ?>
             </td>
             <td>
-                <?=$pro->precio;?> 
+                <?=$pro->precio;?> cop
             </td>
             <td>
                 <?=$pro->stock; ?>

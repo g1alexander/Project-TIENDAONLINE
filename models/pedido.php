@@ -104,7 +104,7 @@ class Pedido{
     /* ESTE METODO LOS PERMITIRA VER LISTAR UN PRODUCTO EN ESPECIFICO 
     */
         $producto = $this->db->query("SELECT * FROM pedidos WHERE id={$this->getId()}");
-        return $producto->fetch_object();; //devuelvo un objeto ya utilizable
+        return $producto->fetch_object(); //devuelvo un objeto ya utilizable
     }
 
     public function getOneByUser(){
@@ -176,5 +176,19 @@ class Pedido{
 		return $result;
     }
 
+    public function edit(){
+        /* ESTE METODO LOS PERMITIRA EDITAR EL ESTADO DEL PRODUCTO EN EL 
+            FORMULARIO DE views/pedido/detalle.php EN LA PARTE DE DETALLE DEL PEDIDO
+        */
+            $sql = "UPDATE pedidos SET estado='{$this->getEstado()}' ";
+            $sql .= " WHERE id={$this->getId()};";
+            $save = $this->db->query($sql);
+            
+            $result = false;
+            if($save){
+                $result = true;
+            }
+            return $result;
+        }
 }
 ?>

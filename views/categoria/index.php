@@ -8,6 +8,7 @@
     <tr>
         <th>id</th>
         <th>nombre</th>
+        <th>acciones</th>
     </tr>
     <?php while($cat=$categorias->fetch_object()): ?>
         <tr>

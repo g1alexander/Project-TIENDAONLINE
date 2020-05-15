@@ -362,6 +362,15 @@ text-decoration: none;
     width: 295px;
     float: right;
 }
+.button-carrito{
+    width: 70px;
+    margin:0px auto;
+    text-align: center;
+}
+.delete-carrito{
+    width: 295px;
+    float: left;
+}
 .total-carrito h3{
     display: block;
     float: left;
@@ -371,4 +380,24 @@ text-decoration: none;
     display: block;
     float: right;
     width: 100px;
+}
+
+.button-delete{
+    display: block;
+    float: left;
+    width: 100px;
+}
+
+.updown-unidades{
+    width: 80px;
+    margin: 0px auto;
+}
+
+.updown-unidades .button{
+    display: block;
+    width: 20px;
+    float: left;
+    padding: 2px;
+    margin: 7px;
+
 }
