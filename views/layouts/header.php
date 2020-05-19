@@ -29,13 +29,15 @@
         EL CUAL NOS PERMITIRA MOSTRAR LAS CATEGORIAS QUE TENEMOS EN LA BASE DE DATOS PARA MOSTARLO
         EN EL MENU DEL SITIO
         -->
-
-        <nav id="menu">
+    <header class="header_menu">
+        <input type="checkbox" id="btn-menuu">
+        <label for="btn-menuu"><img src="assets/img/menu.png" width="30" height="30"></label>
+        <nav class="menu">
             <ul>
                 <li>
                     <a href="<?=base_url?>">Inicio</a>
                     <!-- CONSTANTE URL PRINCIPAL DEL SITIO WEB 
-                       config/parametros.php
+                    config/parametros.php
                     -->
                 </li>
                 <?php while($cat = $categorias->fetch_object()): ?>
@@ -48,5 +50,5 @@
                 <?php endwhile; ?>
             </ul>
         </nav>
-
+    </header>
         <div id="content">
