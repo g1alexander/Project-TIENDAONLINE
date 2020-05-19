@@ -2,9 +2,9 @@
     NOS HAN LLEGADO
 -->
 <?php if(isset($gestion)): ?>
-<h1>Gestion de Pedidos</h1>
+<h1>GESTION DE PEDIDOS</h1>
 <?php else: ?>
-<h1>Mis Pedidos</h1>
+<h1>MIS PEDIDOS</h1>
 <?php endif ?>
 <table>
     <tr>

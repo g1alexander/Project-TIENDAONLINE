@@ -5,23 +5,22 @@ controllers/pedidoController.php
 NECESITAREMOS ESTAR LOGEADOS PARA PODER REALIZAR PEDIDOS
 -->
 <?php if(isset($_SESSION['identity'])): ?>
-<h1>Hacer pedido</h1>
+<h1>HACER PEDIDO</h1>
 <p>
 <a href="<?=base_url?>carrito/index">Ver los productos y precio del pedido</a>
 </p> <br>
-<h3>Direccion para el envio</h3>
+<center>
+<h3>DIRECCION DE ENVIO</h3>
+</center><br>
 <form action="<?=base_url?>pedido/add" method="POST">
 
-<label for="departamento">Departamento</label>
-<input type="text" name="departamento" required>
+<input type="text" id="form-registroo" name="departamento" placeholder="Departamento" required><br>
 
-<label for="municipio">municipio</label>
-<input type="text" name="municipio" required>
+<input type="text" id="form-registroo" name="municipio" placeholder="Municipio" required><br>
 
-<label for="direccion">direccion</label>
-<input type="text" name="direccion" required>
+<input type="text" id="form-registroo" name="direccion" placeholder="Direccion" required><br>
 
-<input type="submit" value="Confirmar pedido">
+<input type="submit" id="buton-form-registro" value="Confirmar pedido">
 </form>
 <?php else: ?>
 <h1>Necesitas estar identificado</h1>

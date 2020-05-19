@@ -22,11 +22,10 @@
 
 <table>
     <tr>
-        <th>id</th>
-        <th>nombre</th>
-        <th>precio</th>
-        <th>stock</th>
-        <th>Acciones</th>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>PRECIO</th>
+        <th>STOCK</th>
     </tr>
     <?php while($pro=$productos->fetch_object()): ?> <!-- ARRAY DE OBJETOS! -->
         <tr>

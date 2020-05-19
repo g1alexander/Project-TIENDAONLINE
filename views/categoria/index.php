@@ -6,9 +6,8 @@
 <a href="<?=base_url ?>categoria/crear" class="button button-small">Crear Nueva</a>
 <table>
     <tr>
-        <th>id</th>
-        <th>nombre</th>
-        <th>acciones</th>
+        <th>ID</th>
+        <th>NOMBRE</th>
     </tr>
     <?php while($cat=$categorias->fetch_object()): ?>
         <tr>

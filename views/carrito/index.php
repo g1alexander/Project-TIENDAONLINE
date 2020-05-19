@@ -1,13 +1,13 @@
-<h1>Carrito de la compra</h1>
+<h1>CARRITO DE COMPRAS</h1>
 <!--FORMULARIO QUE NOS PERMITIRA VISUALIZAR EL CARRITO DE COMPRAS-->
 <?php if(isset($_SESSION['carrito']) && count($_SESSION['carrito']) >= 1): ?>
 <table>
     <tr>
-        <th>imagen</th>
-        <th>nombre</th>
-        <th>precio</th>
-        <th>unidades</th>
-        <th>Eliminar</th>
+        <th>IMAGEN</th>
+        <th>NOMBRE</th>
+        <th>PRECIO</th>
+        <th>UNIDADES</th>
+        <th>ELIMINAR</th>
     </tr>
     <?php foreach ($carrito as $indice => $elemento):
         $producto = $elemento['producto'];

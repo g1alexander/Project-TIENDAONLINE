@@ -4,11 +4,11 @@ controllers/PedidoController.php
 
 metodo detalle y estado
 -->
-<h1>Detalle del pedido</h1>
+<h1>DETALLE DE PEDIDO</h1>
 
 <?php if(isset($pedido)): ?>
     <?php if(isset($_SESSION['admin'])): ?>
-        <h3>Cambiar estado de pedido</h3>
+        <h3>CAMBIAR ESTADO DE PEDIDO</h3>
         <form action="<?=base_url?>pedido/estado" method="POST">
         <input type="hidden" value="<?=$pedido->id?>" name="pedido_id">
         <select name="estado">
@@ -20,17 +20,16 @@ metodo detalle y estado
         <input type="submit" value="Cambiar estado">
         </form><br>
     <?php endif; ?>
-    <h3>Direccion de envio:</h3>
-
+    <h3>DIRECCION DE ENVIO:</h3><br>
     Departamento: <?= $pedido->departamento?> <br>
     Municipio: <?= $pedido->municipio?> <br>
     Direccion: <?= $pedido->direccion?> <br>
     <br>
-    <h3>Datos del pedido:</h3>
+    <h3>DATOS DEL PEDIDO:</h3><br>
     Estado: <?= Utils::showStatus($pedido->estado)?><br>
     Numero de pedido: <?= $pedido->id?> <br>
     Total a pagar: <?= $pedido->coste?> cop<br><br>
-    <h3>Productos: </h3> <br>
+    <h3>PRODUCTOS: </h3> <br>
     <!--MOSTRAREMOS LOS PRODUCTOS-->
     <table>
     <tr>

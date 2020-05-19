@@ -41,6 +41,7 @@ td{
 
 img.thumb{
     width: 100px;
+    margin: 2px 89%;
 }
 
 /* CONTAINER*/
@@ -66,7 +67,14 @@ img.thumb{
 
 #logo img{
     float: left;
-     height: 100px;
+    height: 100px;
+    margin-left: 220px;
+}
+
+@media (max-width:744px){
+    #logo img{
+        margin: 1px 60px;
+    }
 }
 
 #logo a{
@@ -137,7 +145,7 @@ img.thumb{
     background: #01B1EA;
 }
 
-@media (max-width:768px){
+@media (max-width:1497px){
     .header_menu label{
         display: block;
     }
@@ -235,17 +243,23 @@ select,textarea{
     margin-top: 2px;
     margin-bottom: 2px;
 }
-
+:root{
+    --colorTextos: #01B1EA;
+}
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="number"],
 select,textarea{
-    border: 1px solid #c9c9c9;
+    border: none;
     box-shadow: 0px 0px 2px #ccc inset;
-    background:  white;
-    padding:  2px;
+    background:  none;
+    padding:  7px;
+    cursor: pointer;
+    width: 92%;
+    display: block;
     color: gray;
+    border-bottom: 1px solid var(--colorTextos);
     transition: all 300ms;
 }
 
@@ -253,14 +267,65 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus{
     border: 1px solid #1579b5;
-    color: black;
+    outline: none;
+    color: rgb(39, 39, 39);
 }
 
+#login{
+    width: 98%;
+    border-radius: 5px;
+}
+
+#form-loginn{
+    display: block;
+    border-radius: 10px;
+    width: 90%;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    cursor: pointer;
+}
+#form-registroo{
+    margin: auto;
+    display: block;
+    border-radius: 7px;
+    width: 33%;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    cursor: pointer;
+}
+#product-crear{
+    width:200%;
+    text-align: center;
+}
+
+#producto-registro{
+    margin: 2px 65%;
+    display: block;
+    border-radius: 7px;
+    width: 65%;
+    color: black;
+    cursor: pointer;
+}
+
+#buton-form-registro{
+    margin: auto;
+    width: 36%;
+    border-radius: 5px;
+}
+#buton--registro{
+    margin: 2px 65%;
+    width: 68%;
+    border-radius: 5px;
+}
 input[type="button"],
 input[type="submit"],
 button, .button{
     display: block;
-    border-radius: 2px;
+    border-radius: 10px;
     width: auto;
     padding: 5px;
     padding-left: 10px;
@@ -272,7 +337,10 @@ button, .button{
 }
 
 .button{
+    width: 40%;
+    margin-left: 30%;
     background: #33ae3d;
+    border-radius: 10px;
     color: white !important;
     text-decoration: none;
 }
@@ -280,14 +348,17 @@ button, .button{
 .button-small{
     width: 120px;
     text-align: center;
+    margin-left: 42%;
     margin-bottom: 20px;
 }
 
 .button-gestion{
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 5px;
+    padding: 6px 6px 6px 6px;
 }
 .button-red{
+    width: 40%;
     background: red;
     border: 1px solid #cf1717;
 }
@@ -297,6 +368,8 @@ input[type="button"],
 input[type="submit"],
 
 select{
+    border-radius: 4px;
+    width: 37%;
     display: block;
     margin-top: 10px;
 }
@@ -318,7 +391,7 @@ select{
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
     padding: 20px;
-    padding-top: 0px;
+    padding-top: 6px;
 }
 
 
@@ -437,13 +510,16 @@ text-decoration: none;
     margin-top: 5px;
 }
 .button-pedido{
+    text-align: center;
     display: block;
     float: right;
     width: 100px;
 }
 
 .button-delete{
+    text-align: center;
     display: block;
+    margin-left: 12px;
     float: left;
     width: 100px;
 }

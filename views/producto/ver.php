@@ -15,7 +15,7 @@ controllers/productoController.php
         </div>
         <div class="data">
             <p class="descripcion"><?= $pro->descripcion ?></p>
-            <p class="precio"><?= $pro->precio  ?> cop</p>
+            <p class="precio"><?= $pro->precio  ?> cop</p> <br>
             <a href="<?=base_url?>carrito/add&id=<?=$pro->id?>" class="button">Comprar</a>
         </div>
     </div>

@@ -12,29 +12,26 @@
 
 if(isset($_SESSION['register']) && $_SESSION['register'] == 'complete'): ?>
     
-    <strong class="alert_green">REGISTRO COMPLETADO CORRECTAMENTE</strong>
+    <strong class="alert_green">REGISTRO COMPLETADO CORRECTAMENTE</strong><br>
 
 <?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
     
-    <strong class="alert_red">REGISTRO FALLIDO, INTRODUCE BIEN LOS DATOS</strong>
+    <strong class="alert_red">REGISTRO FALLIDO, INTRODUCE BIEN LOS DATOS</strong><br>
 
     <?php endif;?>
     
 <?php Utils::deleteSession('register'); ?>
 
 <form action="<?=base_url?>usuario/save" method ="POST"> <!--ESTO APUNTA A LA URL PERSONALIZADA QUE HICIMOS-->
-<label for="nombre">Nombre</label>
-<input type="text" name="nombre" required/>
 
-<label for="apellidos">Apellidos</label>
-<input type="text" name="apellidos" required/>
+<input type="text" id="form-registroo" name="nombre" placeholder="Nombre" required/><br>
 
-<label for="email">Email</label>
-<input type="email" name="email" required/>
+<input type="text" id="form-registroo" name="apellidos" placeholder="Apellidos" required/><br>
 
-<label for="password">Contraseña</label>
-<input type="password" name="password" required/>
+<input type="email" id="form-registroo" name="email" placeholder="Email" required/><br>
 
-<input type="submit" value="REGISTRARSE"/>
+<input type="password" id="form-registroo" name="password" placeholder="Contraseña" required/><br>
+
+<input type="submit" id="buton-form-registro" value="REGISTRARSE"/>
 
 </form>

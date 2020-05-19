@@ -14,11 +14,9 @@
 			ob_start();?>
         <h3>Entrar a la web</h3>
         <form action="<?=base_url?>usuario/login" method="post">
-            <label for="email">Email</label>
-            <input type="email" name="email" />
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" />
-            <input type="submit" value="Enviar" />
+            <input type="email" id="form-loginn" name="email" placeholder="Email" required/><br>
+            <input type="password" id="form-loginn" name="password" placeholder="Contraseña" required/>
+            <input type="submit" id="login" value="Ingresar"/>
         </form>
         <?php else:?>
         <h3><?=$_SESSION['identity']->nombre?> <?=$_SESSION['identity']->apellido?></h3>

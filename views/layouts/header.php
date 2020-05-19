@@ -40,7 +40,7 @@
                     config/parametros.php
                     -->
                 </li>
-                <?php while($cat = $categorias->fetch_object()): ?>
+                <?php ob_start(); while($cat = $categorias->fetch_object()): ?>
                 <!-- LISTAMOS TODOS LOS OBJETOS QUE ESTAN EN LA BASE DE DATOS Y LOS ALMACENAMOS
                     EN LA $cat PARA LUEGO MOSTARLOS-->
                 <li>
