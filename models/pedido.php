@@ -190,5 +190,18 @@ class Pedido{
             }
             return $result;
         }
+    
+    public function userPedido(){
+        /* ESTE METODO NOS PERMITIRA SABER QUE USUARIO HIZO UN PEDIDO 
+            Y LO MOSTRAREMOS EN views/pedido/detalle.php
+        */
+        $sql = "SELECT * FROM usuarios";
+        $save = $this->db->query($sql);
+        $result = false;
+        if($save){
+            $result = true;
+        }
+        return $result;       
+    }    
 }
 ?>

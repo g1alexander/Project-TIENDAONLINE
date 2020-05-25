@@ -32,7 +32,7 @@ class productoController{
         /* ESTE METODO NOS PERMITIRA MOSTRAR TODOS LOS PRODUCTOS CON LOS QUE CONTAMOS
         Y NOS LOS MOSTRARA EN views/producto/gestion.php
         */
-        Utils::isAdmin();
+        Utils::isIdentity();
         $productos = new Producto();
         $productos = $productos->getAll(); //models/producto.php
 
@@ -43,13 +43,13 @@ class productoController{
          /* ESTE METODO NOS PERMITIRA VER EL FORMULARIO DE REGISTRO DE LOS PRODUCTOS 
            views/producto/crear.php
         */
-        Utils::isAdmin();
+        Utils::isIdentity();
         require_once 'views/producto/crear.php';
     }
 
     public function save(){
         /* METODO QUE NOS PERMITIRA GUARDAR Y EDITAR PRODUCTOS */
-		Utils::isAdmin();
+		Utils::isIdentity();
 		if(isset($_POST)){ //COMPROBAMOS QUE NOS LLEGUE LOS DATOS POR POST[]
            
             /* COMPROBAMOS QUE NOS LLEGUEN LOS DATOS DEL FORMULARIO Y LOS GUARDAMOS

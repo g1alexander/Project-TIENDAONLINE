@@ -20,6 +20,13 @@ metodo detalle y estado
         <input type="submit" value="Cambiar estado">
         </form><br>
     <?php endif; ?>
+
+<?php if(isset($_SESSION['admin'])): ?>
+    <h3>DATOS DEL USUARIO:</h3><br>
+    Nombre: <?= $pedido->departamento?> <br>
+    Apellido: <?= $pedido->municipio?> <br>
+    Email: <?= $pedido->direccion?> <br><br>
+<?php endif;?>
     <h3>DIRECCION DE ENVIO:</h3><br>
     Departamento: <?= $pedido->departamento?> <br>
     Municipio: <?= $pedido->municipio?> <br>
@@ -28,6 +35,7 @@ metodo detalle y estado
     <h3>DATOS DEL PEDIDO:</h3><br>
     Estado: <?= Utils::showStatus($pedido->estado)?><br>
     Numero de pedido: <?= $pedido->id?> <br>
+    Fecha de pedido: <?= $pedido->fecha?><br>
     Total a pagar: <?= $pedido->coste?> cop<br><br>
     <h3>PRODUCTOS: </h3> <br>
     <!--MOSTRAREMOS LOS PRODUCTOS-->

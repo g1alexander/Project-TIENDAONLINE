@@ -19,7 +19,7 @@ controllers/ProductoController.php
 <input type="text" id="producto-registro" name="nombre" value="<?=isset($pro) && is_object($pro) ? $pro->nombre : ""; ?>">
 
 <label id="product-crear" for="descripcion">Descripcion</label>
-<textarea id="producto-registro" name="descripcion"<?= isset($pro) && is_object($pro) ? $pro->descripcion : ""; ?>></textarea>
+<textarea id="producto-registroo" name="descripcion"><?=isset($pro) && is_object($pro) ? $pro->descripcion : ""; ?></textarea>
 
 <label id="product-crear" for="precio">Precio</label>
 <input type="text" name="precio" value="<?= isset($pro) && is_object($pro) ? $pro->precio : ""; ?>" id="producto-registro"> 

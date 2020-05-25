@@ -41,12 +41,15 @@
             <td>
                 <?=$pro->stock; ?>
             </td>
+        <?php if(isset($_SESSION['admin'])): 
+                ob_start();?>
             <td>
             <a href="<?=base_url?>producto/editar&id=<?=$pro->id?>" class="button button-gestion">Editar</a>
             </td>
             <td>
             <a href="<?=base_url?>producto/eliminar&id=<?=$pro->id?>" class="button button-gestion button-red">Eliminar</a>
             </td>
+        <?php endif; ?>
         </tr>
     <?php endwhile; ?>
 </table>

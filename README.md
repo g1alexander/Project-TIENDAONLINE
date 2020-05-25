@@ -6,9 +6,9 @@ Proyecto web de una tienda online
         ## REALIZADO POR:
 
   ## Jhon Alexander Granados Ibarra
-  ## Brando Alexander Lopez
+  ## Brando Alexander Lopez Benavides
   ## Andres Camilo Morales Chaves
-  ## Katerine Cordoba      
+  ## Brigith Katerine Cordoba de la Cruz     
 
 //////////////////////////////////////  
 

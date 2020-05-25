@@ -80,11 +80,12 @@ class pedidoController{
                 views/pedido/gestion.php
             */
             $id = $_GET['id'];
-
             //sacamos el pedido
             $pedido = new Pedido();
             $pedido ->setId($id);
             $pedido = $pedido->getOne();
+            /*SACAR EL usuario del pedido */
+                        
             /*SACAR EL id DEL PRODUCTO
              */
             $pedido_productos = new Pedido();

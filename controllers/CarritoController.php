@@ -68,7 +68,7 @@ class carritoController
         header('location:' . base_url . 'carrito/index');
     }
     public function down(){
-        /*ESTE METODO NOS PERMITIRA BORRAR UN PRODUCTO DEL CARRITO DE COMPRAS */
+        /*ESTE METODO NOS PERMITIRA SUMAR O RESTAR UN PRODUCTO DEL CARRITO DE COMPRAS */
         if(isset($_GET['index'])){
             $index = $_GET['index'];
             $_SESSION['carrito'] [$index]['unidades']--;

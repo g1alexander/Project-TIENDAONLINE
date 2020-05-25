@@ -310,6 +310,15 @@ input[type="email"]:focus{
     color: black;
     cursor: pointer;
 }
+#producto-registroo{
+    margin: 10px 65%;
+    display: block;
+    border-radius: 7px;
+    width: 65%;
+    height:300px;
+    color: black;
+    cursor: pointer;
+}
 
 #buton-form-registro{
     margin: auto;
