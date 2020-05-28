@@ -1,5 +1,6 @@
 <?php 
 require_once 'models/pedido.php';
+require_once 'models/usuario.php';
 class pedidoController{
     public function hacer(){
         require_once 'views/pedido/hacer.php';
@@ -85,7 +86,8 @@ class pedidoController{
             $pedido ->setId($id);
             $pedido = $pedido->getOne();
             /*SACAR EL usuario del pedido */
-                        
+            $user = new Pedido();
+            $user = $user->userPedido($id);      
             /*SACAR EL id DEL PRODUCTO
              */
             $pedido_productos = new Pedido();

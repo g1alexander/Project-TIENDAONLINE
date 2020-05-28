@@ -21,11 +21,11 @@ metodo detalle y estado
         </form><br>
     <?php endif; ?>
 
-<?php if(isset($_SESSION['admin'])): ?>
+<?php if(isset($_SESSION['admin'])  && isset($user)): ?>
     <h3>DATOS DEL USUARIO:</h3><br>
-    Nombre: <?= $pedido->departamento?> <br>
-    Apellido: <?= $pedido->municipio?> <br>
-    Email: <?= $pedido->direccion?> <br><br>
+    Nombre: <?= $user->nombre?> <br>
+    Apellido: <?= $user->apellido?> <br>
+    Email: <?= $user->email?> <br><br>
 <?php endif;?>
     <h3>DIRECCION DE ENVIO:</h3><br>
     Departamento: <?= $pedido->departamento?> <br>

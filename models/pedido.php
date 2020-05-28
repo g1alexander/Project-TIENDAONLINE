@@ -147,8 +147,7 @@ class Pedido{
         FORMULARIO DE views/pedido/confirmado.php EN LA PARTE DE Formulario de pedido 
     */
 		$sql = "INSERT INTO pedidos VALUES(NULL, {$this->getUsuario_id()}, '{$this->getDepartamento()}', '{$this->getMunicipio()}', '{$this->getDireccion()}', {$this->getCoste()}, 'confirmado', CURDATE(), CURTIME())";
-		$save = $this->db->query($sql);
-        
+        $save = $this->db->query($sql);
 		$result = false;
 		if($save){
 			$result = true;
@@ -190,18 +189,12 @@ class Pedido{
             }
             return $result;
         }
-    
-    public function userPedido(){
-        /* ESTE METODO NOS PERMITIRA SABER QUE USUARIO HIZO UN PEDIDO 
-            Y LO MOSTRAREMOS EN views/pedido/detalle.php
-        */
-        $sql = "SELECT * FROM usuarios";
-        $save = $this->db->query($sql);
-        $result = false;
-        if($save){
-            $result = true;
-        }
-        return $result;       
-    }    
+        public function userPedido($id){
+            /* ESTE METODO NOS PERMITIRA SABER QUE USUARIO HIZO UN PEDIDO 
+                Y LO MOSTRAREMOS EN views/pedido/detalle.php
+            */
+        $usuario = $this->db->query("SELECT * FROM pedidos INNER JOIN usuarios ON pedidos.usuario_id = usuarios.id WHERE pedidos.id={$id}");
+            return $usuario->fetch_object();      
+        } 
 }
 ?>
