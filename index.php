@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require_once 'config/verify_install.php';
 require_once 'autoload.php'; //cargados para tener acceso a todos los controladores, objetos y clases
 require_once 'config/db.php'; //cargamos la base de datos
 require_once 'config/parametros.php'; //cargamos las constantes
