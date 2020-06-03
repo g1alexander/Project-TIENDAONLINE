@@ -16,7 +16,7 @@ if(isset($_SESSION['register']) && $_SESSION['register'] == 'complete'): ?>
 
 <?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
     
-    <strong class="alert_red">REGISTRO FALLIDO, INTRODUCE BIEN LOS DATOS</strong><br>
+    <strong class="alert_red">REGISTRO FALLIDO</strong><br>
 
     <?php endif;?>
     
