@@ -12,7 +12,7 @@ Proyecto web de una tienda online
 //////////////////////////////////////  
 
 
-(https://github.com/g1alexander/Project-TIENDAONLINE/blob/master/assets/img/tienda.png)
+![https://github.com/g1alexander/Project-TIENDAONLINE/blob/master/assets/img/tienda.png]
 
 
 
