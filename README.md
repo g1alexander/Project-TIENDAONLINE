@@ -7,11 +7,12 @@ Proyecto web de una tienda online
 
   ## Jhon Alexander Granados Ibarra
   ## Brando Alexander Lopez Benavides
-  ## Andres Camilo Morales Chaves
-  ## Brigith Katerine Cordoba de la Cruz     
+  ## Andres Camilo Morales Chaves  
 
 //////////////////////////////////////  
 
+
+https://github.com/g1alexander/Project-TIENDAONLINE/blob/master/assets/img/tienda.png
 
 
 
